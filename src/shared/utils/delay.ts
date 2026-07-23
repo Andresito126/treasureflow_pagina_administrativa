@@ -1,0 +1,4 @@
+/** Simulates network latency so the mock UI shows loading states realistically. */
+export function delay(ms = 350): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}

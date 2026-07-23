@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * TreasureFlow Admin — theme tokens.
+ * Brand colors (primary green, danger, warning, info) are fixed across themes
+ * and live in tailwind.config.js. Surface roles change with light/dark and are
+ * exposed here as space-separated RGB channels so Tailwind's <alpha-value> works.
+ */
+:root {
+  --tf-secondary: 7 13 25; /* #070D19 */
+  --tf-page: 248 249 247; /* #F8F9F7 */
+  --tf-card: 255 255 255; /* #FFFFFF */
+  --tf-stroke: 210 206 206; /* #D2CECE */
+  --tf-content: 0 0 0; /* #000000 */
+  --tf-muted: 90 96 104; /* muted grey text */
+}
+
+.dark {
+  --tf-secondary: 42 55 72; /* #2A3748 */
+  --tf-page: 27 36 48; /* #1B2430 */
+  --tf-card: 34 45 59; /* #222D3B */
+  --tf-stroke: 56 66 79; /* #38424F */
+  --tf-content: 255 255 255; /* #FFFFFF */
+  --tf-muted: 156 168 182; /* muted grey text */
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    @apply bg-page text-content font-sans;
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  user-select: none;
+  line-height: 1;
+}
+
+/* Subtle green dotted accent for the login backdrop */
+.tf-login-pattern {
+  background-image: radial-gradient(rgb(65 136 57 / 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+* {
+  scrollbar-width: thin;
+}
