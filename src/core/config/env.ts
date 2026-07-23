@@ -16,5 +16,5 @@ export const env = {
   /** API Gateway base URL, e.g. http://localhost:3000 (no trailing slash). */
   gatewayUrl: requiredEnv(import.meta.env.VITE_GATEWAY_URL, 'VITE_GATEWAY_URL'),
   /** When true, the app uses the in-memory mock repositories. */
-  useMocks: requiredEnv(import.meta.env.VITE_USE_MOCKS, 'VITE_USE_MOCKS'),
+  useMocks: requiredEnv(import.meta.env.VITE_USE_MOCKS, 'VITE_USE_MOCKS') === 'true',
 } as const;
